@@ -26,6 +26,9 @@ public class App extends Application {
 
     private Button Settings;
     private TextField Temperature;
+    private TextField UV;
+    private TextField Date;
+    private TextField Time;
 
     public void initializeButtons() throws java.io.IOException, org.json.JSONException{
         info = new Backend("Cambridge", new Date());
@@ -41,6 +44,14 @@ public class App extends Application {
 
         Temperature = mainC.Temperature;
         Temperature.setText(String.valueOf(info.getTemperature()));
+
+        UV = mainC.UV;
+        UV.setText(String.valueOf(info.getUV()));
+
+//        Date = mainC.Date;
+//        Date.setText(String.valueOf(info.getTime().getHours()));
+//
+//        Time = mainC.Time;
     }
 
     public void changeToSettings(){

@@ -27,4 +27,13 @@ public class MainController{
 
     @FXML
     TextField Temperature;
+
+    @FXML
+    TextField UV;
+
+    @FXML
+    TextField Date;
+
+    @FXML
+    TextField Time;
 }

@@ -16,11 +16,11 @@
     <ImageView fitHeight="68.0" fitWidth="90.66666666666666" layoutX="15.0" layoutY="181.0" pickOnBounds="true" preserveRatio="true" />
     <Button fx:id="SafeButton" layoutX="469.0" layoutY="202.0" mnemonicParsing="false" text="SafeButton" />
     <TextField editable="false" layoutX="106.0" layoutY="315.0" prefHeight="68.0" prefWidth="363.0" text="Temperature" fx:id = "Temperature"/>
-    <TextField editable="false" layoutX="106.0" layoutY="446.0" prefHeight="68.0" prefWidth="363.0" text="UV" />
+    <TextField editable="false" layoutX="106.0" layoutY="446.0" prefHeight="68.0" prefWidth="363.0" text="UV" fx:id = "UV"/>
     <TextField editable="false" layoutX="106.0" layoutY="576.0" prefHeight="68.0" prefWidth="363.0" text="Wind" />
     <TextField editable="false" layoutX="106.0" layoutY="705.0" prefHeight="68.0" prefWidth="363.0" text="Tide" />
-    <TextField editable="false" layoutX="14.0" layoutY="920.0" prefHeight="40.0" prefWidth="200.0" text="Date" />
-    <TextField editable="false" layoutX="288.0" layoutY="920.0" prefHeight="40.0" prefWidth="200.0" text="Time" />
+    <TextField editable="false" layoutX="14.0" layoutY="920.0" prefHeight="40.0" prefWidth="200.0" text="Date" fx:id = "Date"/>
+    <TextField editable="false" layoutX="288.0" layoutY="920.0" prefHeight="40.0" prefWidth="200.0" text="Time" fx:id = "Time"/>
     <ImageView fitHeight="68.0" fitWidth="90.66666666666666" layoutX="14.0" layoutY="315.0" pickOnBounds="true" preserveRatio="true" />
     <ImageView fitHeight="68.0" fitWidth="90.66666666666666" layoutX="14.0" layoutY="446.0" pickOnBounds="true" preserveRatio="true" />
     <ImageView fitHeight="68.0" fitWidth="90.66666666666666" layoutX="14.0" layoutY="576.0" pickOnBounds="true" preserveRatio="true" />
