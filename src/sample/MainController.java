@@ -2,6 +2,9 @@ package sample;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
+
+import java.util.Date;
 
 public class MainController{
     @FXML
@@ -21,4 +24,7 @@ public class MainController{
 
     @FXML
     Button TideButton;
+
+    @FXML
+    TextField Temperature;
 }

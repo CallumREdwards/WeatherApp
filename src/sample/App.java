@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
@@ -21,9 +22,14 @@ public class App extends Application {
     private MainController mainC;
     private SettingsController settingsC;
 
-    private Button Settings;
+    private Backend info;
 
-    public void initializeButtons() throws java.io.IOException{
+    private Button Settings;
+    private TextField Temperature;
+
+    public void initializeButtons() throws java.io.IOException, org.json.JSONException{
+        info = new Backend("Cambridge", new Date());
+
         MScreen = MainLoader.load();
         SScreen = SettingsLoader.load();
 
@@ -32,6 +38,9 @@ public class App extends Application {
 
         Settings = mainC.Settings;
         Settings.setOnAction(e->changeToSettings());
+
+        Temperature = mainC.Temperature;
+        Temperature.setText(String.valueOf(info.getTemperature()));
     }
 
     public void changeToSettings(){
@@ -39,6 +48,8 @@ public class App extends Application {
         window.setTitle("Settings Screen");
         window.show();
     }
+
+
 
     @Override
     public void start(Stage primaryScene) throws Exception{
