@@ -4,10 +4,15 @@
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
 <Pane maxHeight="959.9999000000025" maxWidth="559.6666259765625" minHeight="959.9999000000025" minWidth="559.6666259765625" prefHeight="959.9999000000025" prefWidth="559.6666259765625" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="sample.SettingsController">
   <children>
-    <Button fx:id="Main" layoutX="0.0" layoutY="0.0" mnemonicParsing="false" prefHeight="33.951171875" prefWidth="78.0" text="Main" textOverrun="ELLIPSIS" />
+    <ImageView fx:id="backToMainButton" fitHeight="55.24999237060547" fitWidth="73.66665649414062" layoutX="4.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true" visible="true">
+      <image>
+        <Image url="@icons/back.png" />
+      </image>
+    </ImageView>
   </children>
 </Pane>

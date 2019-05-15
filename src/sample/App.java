@@ -33,12 +33,13 @@ public class App extends Application {
 
     private Pane BasePane;
     private TextField Location;
-    private Button Settings;
-    private Button Main;
     private TextField Temperature;
     private TextField UV;
     private TextField Date;
     private TextField Time;
+
+    private ImageView backToMainButton;
+    private ImageView settingsIcon;
 
     public void initializeButtons() throws java.io.IOException, org.json.JSONException{
         info = new Backend("Cambridge", new Date());
@@ -51,13 +52,13 @@ public class App extends Application {
 
         BasePane = mainC.BasePane;
 
-        Settings = mainC.Settings;
-        Settings.setOnAction(e->changeToSettings());
-        //Image settingsImage = new Image(getClass().getResourceAsStream(""));
-        //Settings.setGraphic(new ImageView(settingsImage));
+        settingsIcon = mainC.settingsIcon;
+        settingsIcon.setOnMouseClicked(e->changeToSettings());
 
-        Main = settingsC.Main;
-        Main.setOnAction(e -> changeToMain());
+//        Settings.setGraphic(mainC.settingsIcon);    //this is how to add images over buttons
+
+        backToMainButton = settingsC.backToMainButton;  //delete this
+        backToMainButton.setOnMouseClicked(e->changeToMain());
 
         Temperature = mainC.Temperature;
         Temperature.setText(String.valueOf(info.getTemperature()));
@@ -65,7 +66,6 @@ public class App extends Application {
         UV = mainC.UV;
         UV.setText(String.valueOf(info.getUV()));
 
-        System.out.println(info.getTime().toString());
         String date = info.getTime().toString();
 
         Date = mainC.Date;
@@ -104,6 +104,7 @@ public class App extends Application {
 
         window = primaryScene;
         changeToMain();
+        changeBackgroundColor("white");
     }
 
     public static void main(String[] args) {

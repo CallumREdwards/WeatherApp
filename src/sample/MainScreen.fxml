@@ -9,8 +9,7 @@
 
 <Pane fx:id="BasePane" maxHeight="959.9999000000025" maxWidth="559.6666259765625" minHeight="959.9999000000025" minWidth="559.6666259765625" prefHeight="959.9999000000025" prefWidth="559.6666259765625" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="sample.MainController">
   <children>
-    <TextField fx:id="Location" editable="false" layoutX="0.0" layoutY="14.0" prefHeight="110.951171875" prefWidth="469.0" promptText="" text="Location" />
-    <Button fx:id="Settings" layoutX="469.0" layoutY="38.0" mnemonicParsing="false" prefHeight="44.951171875" prefWidth="73.0" text="Settings" />
+    <TextField fx:id="Location" editable="false" layoutX="0.0" layoutY="0.0" prefHeight="124.951171875" prefWidth="469.0" promptText="" text="Location" />
     <TextField fx:id="LastUpdate" editable="false" layoutX="0.0" layoutY="125.0" prefWidth="469.0" text="Last Updated" />
     <TextField fx:id="Safe" editable="false" layoutX="106.0" layoutY="181.0" prefHeight="68.0" prefWidth="363.0" text="Safe" />
     <ImageView id="SafeImage" fitHeight="68.0" fitWidth="90.66666666666666" layoutX="15.0" layoutY="181.0" pickOnBounds="true" preserveRatio="true" />
@@ -20,7 +19,7 @@
     <TextField editable="false" layoutX="106.0" layoutY="576.0" prefHeight="68.0" prefWidth="363.0" text="Wind" />
     <TextField editable="false" layoutX="106.0" layoutY="705.0" prefHeight="68.0" prefWidth="363.0" text="Tide" />
     <TextField fx:id="Date" editable="false" layoutX="0.0" layoutY="920.0" prefHeight="40.0" prefWidth="200.0" text="Date" />
-    <TextField fx:id="Time" editable="false" layoutX="352.0" layoutY="920.0" prefHeight="40.0" prefWidth="200.0" text="Time" />
+    <TextField fx:id="Time" editable="false" layoutX="352.0" layoutY="920.0" prefHeight="40.0" prefWidth="208.0001220703125" text="Time" />
     <ImageView id="TemperatureImage" fitHeight="68.0" fitWidth="90.66666666666666" layoutX="14.0" layoutY="315.0" pickOnBounds="true" preserveRatio="true" />
     <ImageView id="UVImage" fitHeight="68.0" fitWidth="90.66666666666666" layoutX="14.0" layoutY="446.0" pickOnBounds="true" preserveRatio="true" />
     <ImageView id="WindImage" fitHeight="68.0" fitWidth="90.66666666666666" layoutX="14.0" layoutY="576.0" pickOnBounds="true" preserveRatio="true" />
@@ -29,5 +28,10 @@
     <Button fx:id="UVButton" layoutX="469.0" layoutY="446.0" mnemonicParsing="false" prefHeight="68.0" text="UVButton" />
     <Button fx:id="WindButton" layoutX="469.0" layoutY="576.0" mnemonicParsing="false" prefHeight="68.0" prefWidth="91.0001220703125" text="WindButton" />
     <Button fx:id="TideButton" layoutX="469.0" layoutY="705.0" mnemonicParsing="false" prefHeight="68.0" prefWidth="90.6666259765625" text="TideButton" />
+    <ImageView fx:id="settingsIcon" fitHeight="92.3608492634933" fitWidth="91.00010681152344" focusTraversable="true" layoutX="469.0" layoutY="23.0" mouseTransparent="false" pickOnBounds="true" preserveRatio="true" visible="true">
+      <image>
+        <Image url="@icons/settings.png" />
+      </image>
+    </ImageView>
   </children>
 </Pane>
