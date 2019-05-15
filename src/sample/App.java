@@ -31,6 +31,7 @@ public class App extends Application {
 
     private Backend info;
 
+    private Pane BasePane;
     private TextField Location;
     private Button Settings;
     private Button Main;
@@ -47,6 +48,8 @@ public class App extends Application {
 
         mainC = MainLoader.getController();
         settingsC = SettingsLoader.getController();
+
+        BasePane = mainC.BasePane;
 
         Settings = mainC.Settings;
         Settings.setOnAction(e->changeToSettings());
@@ -85,6 +88,10 @@ public class App extends Application {
         window.setScene(mainScene);
         window.setTitle("Main Screen");
         window.show();
+    }
+
+    public void changeBackgroundColor(String color){
+        BasePane.setStyle("-fx-background-color: " + color + ";");
     }
 
 

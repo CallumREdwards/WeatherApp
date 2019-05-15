@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.paint.*?>
 
-<Pane prefHeight="959.9999000000025" prefWidth="559.6666259765625" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="sample.MainController">
+<Pane fx:id="BasePane" maxHeight="959.9999000000025" maxWidth="559.6666259765625" minHeight="959.9999000000025" minWidth="559.6666259765625" prefHeight="959.9999000000025" prefWidth="559.6666259765625" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="sample.MainController">
   <children>
     <TextField fx:id="Location" editable="false" layoutX="0.0" layoutY="14.0" prefHeight="110.951171875" prefWidth="469.0" promptText="" text="Location" />
     <Button fx:id="Settings" layoutX="469.0" layoutY="38.0" mnemonicParsing="false" prefHeight="44.951171875" prefWidth="73.0" text="Settings" />
