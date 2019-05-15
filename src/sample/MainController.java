@@ -8,6 +8,9 @@ import java.util.Date;
 
 public class MainController{
     @FXML
+    TextField Location;
+
+    @FXML
     Button Settings;
 
     @FXML

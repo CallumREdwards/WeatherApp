@@ -5,9 +5,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
+import java.io.FileInputStream;
+import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -24,6 +28,7 @@ public class App extends Application {
 
     private Backend info;
 
+    private TextField Location;
     private Button Settings;
     private TextField Temperature;
     private TextField UV;
@@ -41,6 +46,8 @@ public class App extends Application {
 
         Settings = mainC.Settings;
         Settings.setOnAction(e->changeToSettings());
+        //Image settingsImage = new Image(getClass().getResourceAsStream(""));
+        //Settings.setGraphic(new ImageView(settingsImage));
 
         Temperature = mainC.Temperature;
         Temperature.setText(String.valueOf(info.getTemperature()));
@@ -48,14 +55,21 @@ public class App extends Application {
         UV = mainC.UV;
         UV.setText(String.valueOf(info.getUV()));
 
-//        Date = mainC.Date;
-//        Date.setText(String.valueOf(info.getTime().getHours()));
-//
-//        Time = mainC.Time;
+        System.out.println(info.getTime().toString());
+        String date = info.getTime().toString();
+
+        Date = mainC.Date;
+        Date.setText(date.substring(0, 10));
+
+        Time = mainC.Time;
+        Time.setText(date.substring(11, 28));
+
+        Location = mainC.Location;
+        Location.setText("Cambridge");
     }
 
     public void changeToSettings(){
-        window.setScene(new Scene(SScreen, 550, 1920));
+        window.setScene(new Scene(SScreen,559.6666259765625, 959.9999000000025));
         window.setTitle("Settings Screen");
         window.show();
     }
@@ -67,7 +81,7 @@ public class App extends Application {
         initializeButtons();
 
         window = primaryScene;
-        window.setScene(new Scene(MScreen, 550, 1920));
+        window.setScene(new Scene(MScreen,559.6666259765625, 959.9999000000025));
         window.setTitle("Main Screen");
         window.show();
     }
