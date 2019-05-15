@@ -4,8 +4,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
 public class MainController{
-    @FXML
-    Button Settings;
+//    @FXML
+//    Button Settings;
 
     @FXML
     Button SafeButton;
@@ -21,4 +21,8 @@ public class MainController{
 
     @FXML
     Button TideButton;
+
+    public void goToSettings(){
+
+    }
 }

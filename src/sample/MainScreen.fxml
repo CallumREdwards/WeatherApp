@@ -9,12 +9,12 @@
 
 <Pane prefHeight="960.0" prefWidth="540.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="sample.MainController">
   <children>
-    <TextField editable="false" layoutX="15.0" layoutY="14.0" prefHeight="110.951171875" prefWidth="454.0" promptText="" text="Location" fx:id="Location"/>
-    <Button layoutX="469.0" layoutY="56.0" mnemonicParsing="false" prefWidth="71.0" text="Settings" fx:id="Settings"/>
-    <TextField editable="false" layoutX="15.0" layoutY="125.0" prefWidth="454.0" text="Last Updated" fx:id="LastUpdate"/>
-    <TextField editable="false" layoutX="106.0" layoutY="181.0" prefHeight="68.0" prefWidth="363.0" text="Safe" fx:id="Safe"/>
+    <TextField fx:id="Location" editable="false" layoutX="15.0" layoutY="14.0" prefHeight="110.951171875" prefWidth="454.0" promptText="" text="Location" />
+
+    <TextField fx:id="LastUpdate" editable="false" layoutX="15.0" layoutY="125.0" prefWidth="454.0" text="Last Updated" />
+    <TextField fx:id="Safe" editable="false" layoutX="106.0" layoutY="181.0" prefHeight="68.0" prefWidth="363.0" text="Safe" />
     <ImageView fitHeight="68.0" fitWidth="90.66666666666666" layoutX="15.0" layoutY="181.0" pickOnBounds="true" preserveRatio="true" />
-    <Button layoutX="469.0" layoutY="202.0" mnemonicParsing="false" text="SafeButton" fx:id = "SafeButton"/>
+    <Button fx:id="SafeButton" layoutX="469.0" layoutY="202.0" mnemonicParsing="false" text="SafeButton" />
     <TextField editable="false" layoutX="106.0" layoutY="315.0" prefHeight="68.0" prefWidth="363.0" text="Temperature" />
     <TextField editable="false" layoutX="106.0" layoutY="446.0" prefHeight="68.0" prefWidth="363.0" text="UV" />
     <TextField editable="false" layoutX="106.0" layoutY="576.0" prefHeight="68.0" prefWidth="363.0" text="Wind" />
@@ -25,9 +25,9 @@
     <ImageView fitHeight="68.0" fitWidth="90.66666666666666" layoutX="14.0" layoutY="446.0" pickOnBounds="true" preserveRatio="true" />
     <ImageView fitHeight="68.0" fitWidth="90.66666666666666" layoutX="14.0" layoutY="576.0" pickOnBounds="true" preserveRatio="true" />
     <ImageView fitHeight="68.0" fitWidth="90.66666666666666" layoutX="14.0" layoutY="705.0" pickOnBounds="true" preserveRatio="true" />
-    <Button layoutX="469.0" layoutY="336.0" mnemonicParsing="false" text="TemperatureButton" fx:id="TemperatureButton"/>
-    <Button layoutX="469.0" layoutY="467.0" mnemonicParsing="false" text="UVButton" fx:id="UVButton"/>
-    <Button layoutX="469.0" layoutY="597.0" mnemonicParsing="false" text="WindButton" fx:id="WindButton"/>
-    <Button layoutX="469.0" layoutY="726.0" mnemonicParsing="false" text="TideButton" fx:id="TideButton"/>
+    <Button fx:id="TemperatureButton" layoutX="469.0" layoutY="336.0" mnemonicParsing="false" text="TemperatureButton" />
+    <Button fx:id="UVButton" layoutX="469.0" layoutY="467.0" mnemonicParsing="false" text="UVButton" />
+    <Button fx:id="WindButton" layoutX="469.0" layoutY="597.0" mnemonicParsing="false" text="WindButton" />
+    <Button fx:id="TideButton" layoutX="469.0" layoutY="726.0" mnemonicParsing="false" text="TideButton" />
   </children>
 </Pane>
