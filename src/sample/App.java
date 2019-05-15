@@ -23,6 +23,9 @@ public class App extends Application {
     private Pane MScreen;
     private Pane SScreen;
 
+    private Scene mainScene;
+    private Scene settingsScene;
+
     private MainController mainC;
     private SettingsController settingsC;
 
@@ -30,6 +33,7 @@ public class App extends Application {
 
     private TextField Location;
     private Button Settings;
+    private Button Main;
     private TextField Temperature;
     private TextField UV;
     private TextField Date;
@@ -48,6 +52,9 @@ public class App extends Application {
         Settings.setOnAction(e->changeToSettings());
         //Image settingsImage = new Image(getClass().getResourceAsStream(""));
         //Settings.setGraphic(new ImageView(settingsImage));
+
+        Main = settingsC.Main;
+        Main.setOnAction(e -> changeToMain());
 
         Temperature = mainC.Temperature;
         Temperature.setText(String.valueOf(info.getTemperature()));
@@ -69,21 +76,27 @@ public class App extends Application {
     }
 
     public void changeToSettings(){
-        window.setScene(new Scene(SScreen,559.6666259765625, 959.9999000000025));
+        window.setScene(settingsScene);
         window.setTitle("Settings Screen");
         window.show();
     }
 
+    public void changeToMain(){
+        window.setScene(mainScene);
+        window.setTitle("Main Screen");
+        window.show();
+    }
 
 
     @Override
     public void start(Stage primaryScene) throws Exception{
         initializeButtons();
 
+        mainScene = new Scene(MScreen,559.6666259765625, 959.9999000000025);
+        settingsScene = new Scene(SScreen,559.6666259765625, 959.9999000000025);
+
         window = primaryScene;
-        window.setScene(new Scene(MScreen,559.6666259765625, 959.9999000000025));
-        window.setTitle("Main Screen");
-        window.show();
+        changeToMain();
     }
 
     public static void main(String[] args) {

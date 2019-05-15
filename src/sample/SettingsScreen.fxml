@@ -8,6 +8,6 @@
 
 <Pane prefHeight="405.0" prefWidth="314.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="sample.SettingsController">
   <children>
-    <Button layoutX="105.0" layoutY="104.0" mnemonicParsing="false" text="Button" />
+    <Button fx:id="Main" layoutX="0.0" layoutY="0.0" mnemonicParsing="false" prefHeight="33.951171875" prefWidth="78.0" text="Main" textOverrun="ELLIPSIS" />
   </children>
 </Pane>
