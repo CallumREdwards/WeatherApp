@@ -28,7 +28,7 @@ public class MainJController {
     private String safety_rating;
 
     public void update_values() {
-        
+
     }
 
 
