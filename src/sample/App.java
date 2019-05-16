@@ -132,6 +132,9 @@ public class App extends Application {
         MainJController mainJController = mainScreenLoader.getController();
         mainJController.setApp(this);
 
+        SettingsController settingsController = settingsScreenLoader.getController();
+        settingsController.setApp(this);
+
         //mainJController.setBackend(new Backend("Cambridge", new Date()));
 
         mainScene = new Scene(mainScreen,540, 960);
