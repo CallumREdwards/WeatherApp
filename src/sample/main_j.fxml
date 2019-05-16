@@ -1,96 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane fx:id="BasePane" prefHeight="960.0" prefWidth="540.0" style="-fx-background-color: #b1efb5;" xmlns="http://javafx.com/javafx/8.0.202-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MainJController">
+<Pane fx:id="BasePane" prefHeight="960.0" prefWidth="540.0" style="-fx-background-color: #b1efb5;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="sample.MainJController">
   <children>
     <ImageView fx:id="warning_icon" fitHeight="110.0" fitWidth="131.0" layoutX="331.0" layoutY="260.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@icons/warning.png" />
-         </image></ImageView>
-    <ImageView fx:id="settings_button" fitHeight="92.3608492634933" fitWidth="91.00010681152344" focusTraversable="true" layoutX="432.0" layoutY="14.0" mouseTransparent="false" pickOnBounds="true" preserveRatio="true" visible="true">
+      <image>
+        <Image url="@icons/warning.png" />
+      </image>
+    </ImageView>
+    <ImageView fx:id="settings_button" fitHeight="92.3608492634933" fitWidth="91.00010681152344" focusTraversable="true" layoutX="432.0" layoutY="14.0" mouseTransparent="false" onMouseClicked="#changeToSettings" pickOnBounds="true" preserveRatio="true" visible="true">
       <image>
         <Image url="@icons/settings.png" />
       </image>
     </ImageView>
-      <ImageView fx:id="weather_icon" fitHeight="125.0" fitWidth="167.0" layoutX="9.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@icons/cloudy_sunny.png" />
-         </image>
-      </ImageView>
-      <Text fx:id="temperature" layoutX="91.0" layoutY="347.0" strokeType="OUTSIDE" strokeWidth="0.0" text="16 C" textAlignment="CENTER">
-         <font>
-            <Font name="Droid Sans" size="95.0" />
-         </font>
-      </Text>
-      <Text fx:id="uv_level" layoutX="144.0" layoutY="417.0" strokeType="OUTSIDE" strokeWidth="0.0" text="UV Level: High" textAlignment="CENTER">
-         <font>
-            <Font size="37.0" />
-         </font>
-      </Text>
-      <ImageView fx:id="wind_direction" fitHeight="236.0" fitWidth="138.0" layoutX="257.0" layoutY="458.0" pickOnBounds="true" preserveRatio="true" rotate="179.0">
-         <image>
-            <Image url="@icons/windspeed_transparent_centred.png" />
-         </image>
-      </ImageView>
-      <Text fx:id="current_tide" layoutX="118.0" layoutY="758.0" strokeType="OUTSIDE" strokeWidth="0.0" text="High Tide:">
-         <font>
-            <Font name="Droid Sans" size="45.0" />
-         </font>
-      </Text>
-      <Text fx:id="current_tide_time" layoutX="340.0" layoutY="752.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12:00 pm" wrappingWidth="137.50488698354457">
-         <font>
-            <Font name="Droid Sans" size="29.0" />
-         </font>
-      </Text>
-      <Text fx:id="next_tide" layoutX="124.0" layoutY="820.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Low Tide:">
-         <font>
-            <Font name="Droid Sans" size="45.0" />
-         </font>
-      </Text>
-      <Text fx:id="next_tide_time" layoutX="340.0" layoutY="814.0" strokeType="OUTSIDE" strokeWidth="0.0" text="7:00 pm" wrappingWidth="137.50488698354457">
-         <font>
-            <Font name="Droid Sans" size="29.0" />
-         </font>
-      </Text>
-      <Text fx:id="location" layoutX="192.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CAMBRIDGE">
-         <font>
-            <Font size="36.0" />
-         </font>
-      </Text>
-      <Text fx:id="last_update" layoutX="14.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LAST UPDATED: 1:30pm" wrappingWidth="429.7294921875">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Text>
-      <Text fx:id="date" layoutX="45.0" layoutY="933.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DATE: 24/06/19">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Text>
-      <Text fx:id="time" layoutX="365.0" layoutY="933.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TIME: 2:30pm">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Text>
-      <Text fx:id="windspeed" layoutX="271.0" layoutY="584.0" strokeType="OUTSIDE" strokeWidth="0.0" text="20">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Text>
-      <Text fx:id="windspeed_units" layoutX="148.0" layoutY="452.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wind Speed km/h" textAlignment="CENTER" wrappingWidth="263.78466796875">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Text>
-      <Text fx:id="saftey_rating" layoutX="224.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SAFE">
-         <font>
-            <Font name="Droid Sans" size="58.0" />
-         </font>
-      </Text>
+    <ImageView fx:id="weather_icon" fitHeight="125.0" fitWidth="167.0" layoutX="9.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@icons/cloudy_sunny.png" />
+      </image>
+    </ImageView>
+    <Text fx:id="temperature" layoutX="91.0" layoutY="347.0" strokeType="OUTSIDE" strokeWidth="0.0" text="16 C" textAlignment="CENTER">
+      <font>
+        <Font size="95.0" />
+      </font>
+    </Text>
+    <Text fx:id="uv_level" layoutX="144.0" layoutY="417.0" strokeType="OUTSIDE" strokeWidth="0.0" text="UV Level: High" textAlignment="CENTER">
+      <font>
+        <Font size="37.0" />
+      </font>
+    </Text>
+    <ImageView fx:id="wind_direction" fitHeight="236.0" fitWidth="138.0" layoutX="257.0" layoutY="458.0" pickOnBounds="true" preserveRatio="true" rotate="179.0">
+      <image>
+        <Image url="@icons/windspeed_transparent_centred.png" />
+      </image>
+    </ImageView>
+    <Text fx:id="current_tide" layoutX="118.0" layoutY="758.0" strokeType="OUTSIDE" strokeWidth="0.0" text="High Tide:">
+      <font>
+        <Font size="45.0" fx:id="x1" />
+      </font>
+    </Text>
+    <Text fx:id="current_tide_time" layoutX="340.0" layoutY="752.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12:00 pm" wrappingWidth="137.50488698354457">
+      <font>
+        <Font size="29.0" fx:id="x2" />
+      </font>
+    </Text>
+    <Text fx:id="next_tide" font="$x1" layoutX="124.0" layoutY="820.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Low Tide:" />
+    <Text fx:id="next_tide_time" font="$x2" layoutX="340.0" layoutY="814.0" strokeType="OUTSIDE" strokeWidth="0.0" text="7:00 pm" wrappingWidth="137.50488698354457" />
+    <Text fx:id="location" layoutX="192.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CAMBRIDGE">
+      <font>
+        <Font size="36.0" />
+      </font>
+    </Text>
+    <Text fx:id="last_update" layoutX="14.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LAST UPDATED: 1:30pm" wrappingWidth="429.7294921875">
+      <font>
+        <Font size="16.0" />
+      </font>
+    </Text>
+    <Text fx:id="date" layoutX="45.0" layoutY="933.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DATE: 24/06/19">
+      <font>
+        <Font size="20.0" fx:id="x3" />
+      </font>
+    </Text>
+    <Text fx:id="time" font="$x3" layoutX="365.0" layoutY="933.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TIME: 2:30pm" />
+    <Text fx:id="windspeed" layoutX="271.0" layoutY="584.0" strokeType="OUTSIDE" strokeWidth="0.0" text="20">
+      <font>
+        <Font size="24.0" />
+      </font>
+    </Text>
+    <Text fx:id="windspeed_units" layoutX="148.0" layoutY="452.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wind Speed km/h" textAlignment="CENTER" wrappingWidth="263.78466796875">
+      <font>
+        <Font size="18.0" />
+      </font>
+    </Text>
+    <Text fx:id="saftey_rating" layoutX="224.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SAFE">
+      <font>
+        <Font size="58.0" />
+      </font>
+    </Text>
   </children>
 </Pane>

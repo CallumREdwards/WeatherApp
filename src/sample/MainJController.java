@@ -5,6 +5,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.Date;
@@ -12,6 +13,7 @@ import java.util.Date;
 public class MainJController {
 
     private Backend backend = new Backend("Cambridge",new Date());
+    private App app;
 
     private String location_text;
     private Boolean warning_icon_visible;
@@ -31,6 +33,33 @@ public class MainJController {
     private String safety_rating;
 
     public MainJController() throws IOException {
+        location_text = backend.getLocation();
+        //warining_icon_visible
+        //weather_icon_type
+        temperature_value = backend.getTemperature();
+        uv_level_text = Double.toString(backend.getUV());
+        wind_direction_degrees = backend.getWindDirection();
+        //current_tide_text
+        //next_tide_text
+        //current_tide_time_text
+        //next_tide_time_text
+        last_update_text = backend.getTimeOfUpdate().toString();
+        //date_text
+        //time_text
+        wind_speed_value = backend.getWindSpeed();
+        //wind_speed_metric
+        //safety_rating
+    }
+
+    public void setApp(App something){
+        app = something;
+    }
+
+    public void changeToSettings(){
+        Stage window = app.getStage();
+        window.setScene(app.getSettingsScene());
+        window.setTitle("Settings Screen");
+        window.show();
     }
 
     public void update_values() {

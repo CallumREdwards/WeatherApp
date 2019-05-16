@@ -17,8 +17,11 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class App extends Application {
-    //private FXMLLoader MainLoader = new FXMLLoader(getClass().getResource("MainScreenV2.fxml"));
-    private FXMLLoader SettingsLoader = new FXMLLoader(getClass().getResource("SettingsScreen.fxml"));
+    private FXMLLoader mainScreenLoader;
+    private FXMLLoader settingsScreenLoader;
+
+    private Region mainScreen;
+    private Region settingsScreen;
 
     private Stage window;
     private Pane MScreen;
@@ -98,8 +101,21 @@ public class App extends Application {
         window.show();
     }
 
+    public Stage getStage(){
+        return window;
+    }
+
+    public Scene getMainScene(){
+        return mainScene;
+    }
+
+    public Scene getSettingsScene(){
+        return settingsScene;
+    }
+
     //use this method to change the BackGround when you return from the SettingsScreen
     public void changeBackgroundColor(String color){
+
         BasePane.setStyle("-fx-background-color: " + color + ";");
     }
 
@@ -107,16 +123,19 @@ public class App extends Application {
     public void start(Stage primaryScene) throws Exception{
         //initializeButtons();
 
-        FXMLLoader mainScreenLoader = new FXMLLoader(getClass().getResource("main_j.fxml"));
+        mainScreenLoader = new FXMLLoader(getClass().getResource("main_j.fxml"));
+        settingsScreenLoader = new FXMLLoader(getClass().getResource("SettingsScreen.fxml"));
 
-        Region mainScreen = mainScreenLoader.load();
+        mainScreen = mainScreenLoader.load();
+        settingsScreen = settingsScreenLoader.load();
 
         MainJController mainJController = mainScreenLoader.getController();
+        mainJController.setApp(this);
 
         //mainJController.setBackend(new Backend("Cambridge", new Date()));
 
         mainScene = new Scene(mainScreen,540, 960);
-        //settingsScene = new Scene(SScreen,540, 960);
+        settingsScene = new Scene(settingsScreen,540, 960);
 
         window = primaryScene;
         changeToMain();
