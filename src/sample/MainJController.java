@@ -6,9 +6,12 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 
+import java.io.IOException;
 import java.util.Date;
 
 public class MainJController {
+
+    private Backend backend = new Backend("Cambridge",new Date());
 
     private String location_text;
     private Boolean warning_icon_visible;
@@ -26,6 +29,9 @@ public class MainJController {
     private Double wind_speed_value;
     private Boolean wind_speed_metric;
     private String safety_rating;
+
+    public MainJController() throws IOException {
+    }
 
     public void update_values() {
 

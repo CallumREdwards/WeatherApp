@@ -1,3 +1,11 @@
 .button {
     -fx-background-color: transparent !important;
 }
+
+.TextField {
+    -fx-background-color: transparent !important;
+}
+
+.background {
+    -fx-background-color: #ffdb99;
+}

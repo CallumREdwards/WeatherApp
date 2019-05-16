@@ -8,6 +8,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.Region;
 import javafx.stage.Stage;
 
 import java.io.FileInputStream;
@@ -16,7 +17,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class App extends Application {
-    private FXMLLoader MainLoader = new FXMLLoader(getClass().getResource("MainScreen.fxml"));
+    //private FXMLLoader MainLoader = new FXMLLoader(getClass().getResource("MainScreenV2.fxml"));
     private FXMLLoader SettingsLoader = new FXMLLoader(getClass().getResource("SettingsScreen.fxml"));
 
     private Stage window;
@@ -43,7 +44,7 @@ public class App extends Application {
     private ImageView backToMainButton;
     private ImageView settingsIcon;
 
-    public void initializeButtons() throws java.io.IOException, org.json.JSONException{
+    /*public void initializeButtons() throws java.io.IOException, org.json.JSONException{
         info = new Backend("Bucharest", new Date());
 
         MScreen = MainLoader.load();
@@ -82,7 +83,7 @@ public class App extends Application {
 
         Location = mainC.Location;
         Location.setText(info.getLocation());
-    }
+    }*/
 
     public void changeToSettings(){
         window.setScene(settingsScene);
@@ -104,10 +105,18 @@ public class App extends Application {
 
     @Override
     public void start(Stage primaryScene) throws Exception{
-        initializeButtons();
+        //initializeButtons();
 
-        mainScene = new Scene(MScreen,559.6666259765625, 959.9999000000025);
-        settingsScene = new Scene(SScreen,559.6666259765625, 959.9999000000025);
+        FXMLLoader mainScreenLoader = new FXMLLoader(getClass().getResource("main_j.fxml"));
+
+        Region mainScreen = mainScreenLoader.load();
+
+        MainJController mainJController = mainScreenLoader.getController();
+
+        //mainJController.setBackend(new Backend("Cambridge", new Date()));
+
+        mainScene = new Scene(mainScreen,540, 960);
+        //settingsScene = new Scene(SScreen,540, 960);
 
         window = primaryScene;
         changeToMain();

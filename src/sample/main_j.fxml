@@ -6,13 +6,13 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane fx:id="BasePane" maxHeight="959.9999000000025" maxWidth="559.6666259765625" minHeight="959.9999000000025" minWidth="559.6666259765625" prefHeight="959.9999000000025" prefWidth="559.6666259765625" style="-fx-background-color: #b1efb5;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MainJController">
+<Pane fx:id="BasePane" prefHeight="960.0" prefWidth="540.0" style="-fx-background-color: #b1efb5;" xmlns="http://javafx.com/javafx/8.0.202-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MainJController">
   <children>
     <ImageView fx:id="warning_icon" fitHeight="110.0" fitWidth="131.0" layoutX="331.0" layoutY="260.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@icons/warning.png" />
          </image></ImageView>
-    <ImageView fx:id="settings_button" fitHeight="92.3608492634933" fitWidth="91.00010681152344" focusTraversable="true" layoutX="454.0" layoutY="14.0" mouseTransparent="false" pickOnBounds="true" preserveRatio="true" visible="true">
+    <ImageView fx:id="settings_button" fitHeight="92.3608492634933" fitWidth="91.00010681152344" focusTraversable="true" layoutX="432.0" layoutY="14.0" mouseTransparent="false" pickOnBounds="true" preserveRatio="true" visible="true">
       <image>
         <Image url="@icons/settings.png" />
       </image>
@@ -57,9 +57,9 @@
             <Font name="Droid Sans" size="29.0" />
          </font>
       </Text>
-      <Text fx:id="location" layoutX="184.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CAMBRIDGE">
+      <Text fx:id="location" layoutX="192.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CAMBRIDGE">
          <font>
-            <Font size="28.0" />
+            <Font size="36.0" />
          </font>
       </Text>
       <Text fx:id="last_update" layoutX="14.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LAST UPDATED: 1:30pm" wrappingWidth="429.7294921875">

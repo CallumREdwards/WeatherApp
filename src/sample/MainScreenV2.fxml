@@ -13,7 +13,7 @@
 <?import javafx.scene.shape.SVGPath?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="960.0" prefWidth="540.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.202-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MainController">
+<AnchorPane prefHeight="960.0" prefWidth="540.0" styleClass="background" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.202-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MainScreenController">
    <children>
       <VBox prefHeight="972.0" prefWidth="720.0" spacing="48.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -21,19 +21,26 @@
                <children>
                   <VBox>
                      <children>
-                        <TextField maxWidth="1.7976931348623157E308" text="Location">
+                        <TextField maxWidth="1.7976931348623157E308" styleClass="TextField" text="Location">
                            <font>
                               <Font size="48.0" />
                            </font>
                         </TextField>
-                        <Label text="Time of last update:">
+                        <Label text="100 hours ago">
                            <font>
                               <Font size="18.0" />
                            </font>
+                           <graphic>
+                              <Label text="Time of last update:">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                           </graphic>
                         </Label>
                      </children>
                   </VBox>
-                  <Button mnemonicParsing="false" prefHeight="123.0" prefWidth="121.0">
+                  <Button mnemonicParsing="false" onAction="#refresh" prefHeight="123.0" prefWidth="121.0">
                      <graphic>
                         <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true" />
                      </graphic>
@@ -55,17 +62,41 @@
                   <ImageView fitHeight="256.0" fitWidth="256.0" pickOnBounds="true" preserveRatio="true" />
                   <VBox prefHeight="256.0" prefWidth="289.0">
                      <children>
-                        <Label text="Temperature: ">
+                        <Label fx:id="temperature" text="100 ºC">
+                           <font>
+                              <Font size="64.0" />
+                           </font>
+                        </Label>
+                        <Label text="Weather description">
                            <font>
                               <Font size="24.0" />
                            </font>
                         </Label>
-                        <Label text="UV: ">
+                        <Label text="100">
                            <font>
                               <Font size="24.0" />
                            </font>
+                           <graphic>
+                              <Label text="UV Index: ">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                           </graphic>
                         </Label>
-                        <Label text="Tide:">
+                        <Label text="Very High">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <graphic>
+                              <Label text="Tide: ">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                           </graphic>
+                        </Label>
+                        <Label text="Humidity:">
                            <font>
                               <Font size="24.0" />
                            </font>
@@ -77,8 +108,8 @@
                         </Label>
                         <StackPane prefHeight="150.0" prefWidth="200.0">
                            <children>
-                              <Ellipse fill="DODGERBLUE" radiusX="40.0" radiusY="40.0" stroke="BLACK" strokeType="INSIDE" />
-                              <SVGPath content="M0,0 v40 M0,0 l-8,8 M0,0 l8,8" fill="TRANSPARENT" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="5.0" />
+                              <Ellipse fill="#1f93ff00" radiusX="40.0" radiusY="40.0" stroke="BLACK" strokeType="INSIDE" />
+                              <SVGPath fx:id="windArrow" content="M0,0 v40 M0,0 l-8,8 M0,0 l8,8" fill="TRANSPARENT" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="5.0" />
                            </children>
                         </StackPane>
                      </children></VBox>
