@@ -2,9 +2,11 @@ package sample;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -12,8 +14,14 @@ import java.util.Date;
 
 public class MainJController {
 
+
+    @FXML
+    private Text temperature;
     private Backend backend = new Backend("Cambridge",new Date());
     private App app;
+
+
+
 
     private String location_text;
     private Boolean warning_icon_visible;
@@ -37,7 +45,6 @@ public class MainJController {
         //warining_icon_visible
         //weather_icon_type
         temperature_value = backend.getTemperature();
-        uv_level_text = Double.toString(backend.getUV());
         wind_direction_degrees = backend.getWindDirection();
         //current_tide_text
         //next_tide_text
@@ -53,6 +60,7 @@ public class MainJController {
 
     public void setApp(App something){
         app = something;
+        temperature.setText(Double.toString(backend.getTemperature()));
     }
 
     public void changeToSettings(){
