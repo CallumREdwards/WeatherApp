@@ -130,6 +130,10 @@ public class Backend {
         return new Date(current.getLong("dt"));
     }
 
+    public String getLocation(){
+        return this.location;
+    }
+
 
     public static void main(String[] args) throws IOException, org.json.JSONException  {
         Backend b = new Backend("cambridge", new Date());

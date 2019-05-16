@@ -42,7 +42,7 @@ public class App extends Application {
     private ImageView settingsIcon;
 
     public void initializeButtons() throws java.io.IOException, org.json.JSONException{
-        info = new Backend("Cambridge", new Date());
+        info = new Backend("Bucharest", new Date());
 
         MScreen = MainLoader.load();
         SScreen = SettingsLoader.load();
@@ -75,7 +75,7 @@ public class App extends Application {
         Time.setText(date.substring(11, 28));
 
         Location = mainC.Location;
-        Location.setText("Cambridge");
+        Location.setText(info.getLocation());
     }
 
     public void changeToSettings(){
@@ -90,10 +90,10 @@ public class App extends Application {
         window.show();
     }
 
+    //use this method to change the BackgGround when you return from the SettingsScreen
     public void changeBackgroundColor(String color){
         BasePane.setStyle("-fx-background-color: " + color + ";");
     }
-
 
     @Override
     public void start(Stage primaryScene) throws Exception{
@@ -104,7 +104,7 @@ public class App extends Application {
 
         window = primaryScene;
         changeToMain();
-        changeBackgroundColor("white");
+
     }
 
     public static void main(String[] args) {

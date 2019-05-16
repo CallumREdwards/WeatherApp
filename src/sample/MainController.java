@@ -47,5 +47,4 @@ public class MainController{
 
     @FXML
     ImageView settingsIcon;
-
 }

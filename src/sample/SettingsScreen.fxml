@@ -14,5 +14,6 @@
         <Image url="@icons/back.png" />
       </image>
     </ImageView>
+    <TextField layoutX="4.0" layoutY="60.0" prefHeight="40.51666259765625" prefWidth="541.6666259765625" promptText="Location" />
   </children>
 </Pane>
