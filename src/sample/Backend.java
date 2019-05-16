@@ -13,7 +13,7 @@ public class Backend {
     private String location;
     private Date time;
     private String units = "metric";
-    private double timeOfUpdate;
+    private Date timeOfUpdate;
     private String APPID = "1bf10981e67c1d2094f4c94b404d2ab0";
     private JSONObject hourly;
     private JSONObject current;
@@ -78,14 +78,14 @@ public class Backend {
 
     public void update() throws IOException, org.json.JSONException  {
         hourly = readJsonFromUrl("https://api.openweathermap.org/data/2.5/forecast/hourly?q=" + location + "&units=" + units + "&APPID=" + APPID);
-        timeOfUpdate = (new Date()).getTime();
+        timeOfUpdate = new Date();
         JSONObject coord = hourly.getJSONObject("city").getJSONObject("coord");
         uv = readJSONArrayFromUrl("https://api.openweathermap.org/data/2.5/uvi/forecast?lat=" + coord.getDouble("lat") + "&lon=" + coord.getDouble("lon") + "&appid=" + APPID);
         setCurrentWeather();
     }
 
     private void setCurrentWeather() throws org.json.JSONException  {//UV forecast of only 8 hours from now
-        int hoursFromNow = (int) (time.getTime() / 3600000 - timeOfUpdate / 3600000);
+        int hoursFromNow = (int) (time.getTime() - timeOfUpdate.getTime())/ 3600000;
         current = hourly.getJSONArray("list").getJSONObject(hoursFromNow);
         if (hoursFromNow < 8) {
             currentuv = uv.getJSONObject(hoursFromNow).getInt("value");
@@ -134,6 +134,10 @@ public class Backend {
         return this.location;
     }
 
+    public Date getTimeOfUpdate(){
+        return timeOfUpdate;
+    }
+
 
     public static void main(String[] args) throws IOException, org.json.JSONException  {
         Backend b = new Backend("cambridge", new Date());
@@ -146,5 +150,6 @@ public class Backend {
         System.out.println("WindDirection " + b.getWindDirection());
         System.out.println("Time " + b.getTime());
         System.out.println("UV " + b.getUV());
+        System.out.println("timeOfUpdate " + b.getTimeOfUpdate());
     }
 }
