@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane fx:id="BasePane" maxHeight="959.9999000000025" maxWidth="559.6666259765625" minHeight="959.9999000000025" minWidth="559.6666259765625" prefHeight="959.9999000000025" prefWidth="559.6666259765625" style="-fx-background-color: #838f4d;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MainController">
+  <children>
+    <ImageView id="SafeImage" fitHeight="110.0" fitWidth="131.0" layoutX="326.0" layoutY="230.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@icons/warning.png" />
+         </image></ImageView>
+    <ImageView id="TemperatureImage" fitHeight="68.0" fitWidth="90.66666666666666" layoutX="14.0" layoutY="315.0" pickOnBounds="true" preserveRatio="true" />
+    <ImageView id="UVImage" fitHeight="68.0" fitWidth="90.66666666666666" layoutX="14.0" layoutY="446.0" pickOnBounds="true" preserveRatio="true" />
+    <ImageView id="WindImage" fitHeight="68.0" fitWidth="90.66666666666666" layoutX="14.0" layoutY="576.0" pickOnBounds="true" preserveRatio="true" />
+    <ImageView id="TideImage" fitHeight="68.0" fitWidth="90.66666666666666" layoutX="14.0" layoutY="705.0" pickOnBounds="true" preserveRatio="true" />
+    <ImageView fx:id="settingsIcon" fitHeight="92.3608492634933" fitWidth="91.00010681152344" focusTraversable="true" layoutX="454.0" layoutY="14.0" mouseTransparent="false" pickOnBounds="true" preserveRatio="true" visible="true">
+      <image>
+        <Image url="@icons/settings.png" />
+      </image>
+    </ImageView>
+      <ImageView fitHeight="125.0" fitWidth="167.0" layoutX="9.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@icons/cloudy_sunny.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="83.0" layoutY="318.0" strokeType="OUTSIDE" strokeWidth="0.0" text="16 C" textAlignment="CENTER">
+         <font>
+            <Font name="Droid Sans" size="95.0" />
+         </font>
+      </Text>
+      <Text layoutX="144.0" layoutY="417.0" strokeType="OUTSIDE" strokeWidth="0.0" text="UV Level: High" textAlignment="CENTER">
+         <font>
+            <Font size="37.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="236.0" fitWidth="138.0" layoutX="257.0" layoutY="458.0" pickOnBounds="true" preserveRatio="true" rotate="179.0">
+         <image>
+            <Image url="@../../../../../../Pictures/weather%20app/windspeed_transparent_centred.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="118.0" layoutY="758.0" strokeType="OUTSIDE" strokeWidth="0.0" text="High Tide:">
+         <font>
+            <Font name="Droid Sans" size="45.0" />
+         </font>
+      </Text>
+      <Text layoutX="340.0" layoutY="752.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12:00 pm" wrappingWidth="137.50488698354457">
+         <font>
+            <Font name="Droid Sans" size="29.0" />
+         </font>
+      </Text>
+      <Text layoutX="124.0" layoutY="820.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Low Tide:">
+         <font>
+            <Font name="Droid Sans" size="45.0" />
+         </font>
+      </Text>
+      <Text layoutX="340.0" layoutY="814.0" strokeType="OUTSIDE" strokeWidth="0.0" text="7:00 pm" wrappingWidth="137.50488698354457">
+         <font>
+            <Font name="Droid Sans" size="29.0" />
+         </font>
+      </Text>
+      <Text layoutX="184.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CAMBRIDGE">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Text>
+      <Text layoutX="14.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LAST UPDATED: 1:30pm" wrappingWidth="429.7294921875">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Text layoutX="45.0" layoutY="933.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DATE: 24/06/19">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="365.0" layoutY="933.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TIME: 2:30pm">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+  </children>
+</Pane>
