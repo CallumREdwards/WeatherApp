@@ -16,7 +16,7 @@ public class MainController{
     TextField Location;
 
     @FXML
-    Button Settings;
+    TextField LastUpdate;
 
     @FXML
     Button SafeButton;

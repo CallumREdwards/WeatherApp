@@ -30,6 +30,7 @@ public class App extends Application {
     private SettingsController settingsC;
 
     private Backend info;
+    private Date timeOfUpdate;
 
     private Pane BasePane;
     private TextField Location;
@@ -37,6 +38,7 @@ public class App extends Application {
     private TextField UV;
     private TextField Date;
     private TextField Time;
+    private TextField LastUpdate;
 
     private ImageView backToMainButton;
     private ImageView settingsIcon;
@@ -57,7 +59,7 @@ public class App extends Application {
 
 //        Settings.setGraphic(mainC.settingsIcon);    //this is how to add images over buttons
 
-        backToMainButton = settingsC.backToMainButton;  //delete this
+        backToMainButton = settingsC.backToMainButton;
         backToMainButton.setOnMouseClicked(e->changeToMain());
 
         Temperature = mainC.Temperature;
@@ -74,6 +76,10 @@ public class App extends Application {
         Time = mainC.Time;
         Time.setText(date.substring(11, 28));
 
+        timeOfUpdate = info.getTimeOfUpdate();
+        LastUpdate = mainC.LastUpdate;
+        LastUpdate.setText(timeOfUpdate.toString());
+
         Location = mainC.Location;
         Location.setText(info.getLocation());
     }
@@ -83,6 +89,7 @@ public class App extends Application {
         window.setTitle("Settings Screen");
         window.show();
     }
+    //comment
 
     public void changeToMain(){
         window.setScene(mainScene);
@@ -90,7 +97,7 @@ public class App extends Application {
         window.show();
     }
 
-    //use this method to change the BackgGround when you return from the SettingsScreen
+    //use this method to change the BackGround when you return from the SettingsScreen
     public void changeBackgroundColor(String color){
         BasePane.setStyle("-fx-background-color: " + color + ";");
     }
