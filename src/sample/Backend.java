@@ -127,7 +127,7 @@ public class Backend {
     }
 
     public Date getTime() throws org.json.JSONException {
-        return new Date(current.getLong("dt"));
+        return new Date(current.getLong("dt")*1000);
     }
 
     public String getLocation(){
