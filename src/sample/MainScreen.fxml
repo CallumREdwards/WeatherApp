@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane fx:id="BasePane" maxHeight="959.9999000000025" maxWidth="559.6666259765625" minHeight="959.9999000000025" minWidth="559.6666259765625" prefHeight="959.9999000000025" prefWidth="559.6666259765625" xmlns="http://javafx.com/javafx/8.0.202-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MainController">
+<Pane fx:id="BasePane" maxHeight="959.9999000000025" maxWidth="559.6666259765625" minHeight="959.9999000000025" minWidth="559.6666259765625" onMouseClicked="#changeToSettings" prefHeight="959.9999000000025" prefWidth="559.6666259765625" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MainController">
   <children>
     <TextField fx:id="Location" editable="false" layoutX="0.0" layoutY="0.0" prefHeight="124.951171875" prefWidth="469.0" promptText="" text="Location">
          <font>
@@ -31,7 +31,7 @@
     <Button fx:id="UVButton" layoutX="469.0" layoutY="446.0" mnemonicParsing="false" prefHeight="68.0" text="UVButton" />
     <Button fx:id="WindButton" layoutX="469.0" layoutY="576.0" mnemonicParsing="false" prefHeight="68.0" prefWidth="91.0001220703125" text="WindButton" />
     <Button fx:id="TideButton" layoutX="469.0" layoutY="705.0" mnemonicParsing="false" prefHeight="68.0" prefWidth="90.6666259765625" text="TideButton" />
-    <ImageView fx:id="settingsIcon" fitHeight="92.3608492634933" fitWidth="91.00010681152344" focusTraversable="true" layoutX="469.0" layoutY="23.0" mouseTransparent="false" pickOnBounds="true" preserveRatio="true" visible="true">
+    <ImageView fx:id="settingsIcon" fitHeight="92.3608492634933" fitWidth="91.00010681152344" focusTraversable="true" layoutX="469.0" layoutY="23.0" mouseTransparent="false" onMouseClicked="#changeToSettings" pickOnBounds="true" preserveRatio="true" visible="true">
       <image>
         <Image url="@icons/settings.png" />
       </image>
