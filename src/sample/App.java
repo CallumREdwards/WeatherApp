@@ -107,13 +107,13 @@ public class App extends Application {
     public void start(Stage primaryScene) throws Exception{
         //initializeButtons();
 
-        FXMLLoader mainScreenLoader = new FXMLLoader(getClass().getResource("MainScreenV2.fxml"));
+        FXMLLoader mainScreenLoader = new FXMLLoader(getClass().getResource("main_j.fxml"));
 
         Region mainScreen = mainScreenLoader.load();
 
-        MainScreenController mainScreenController = mainScreenLoader.getController();
+        MainJController mainJController = mainScreenLoader.getController();
 
-        mainScreenController.setBackend(new Backend("Cambridge", new Date()));
+        //mainJController.setBackend(new Backend("Cambridge", new Date()));
 
         mainScene = new Scene(mainScreen,540, 960);
         //settingsScene = new Scene(SScreen,540, 960);
