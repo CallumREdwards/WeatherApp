@@ -85,7 +85,7 @@ public class Backend {
     }
 
     private void setCurrentWeather() throws org.json.JSONException  {//UV forecast of only 8 hours from now
-        int hoursFromNow = (int) (time.getTime() / 60000 - timeOfUpdate / 60000);
+        int hoursFromNow = (int) (time.getTime() / 3600000 - timeOfUpdate / 3600000);
         current = hourly.getJSONArray("list").getJSONObject(hoursFromNow);
         if (hoursFromNow < 8) {
             currentuv = uv.getJSONObject(hoursFromNow).getInt("value");
