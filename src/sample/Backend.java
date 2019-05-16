@@ -40,7 +40,7 @@ public class Backend {
         }
     }
 
-    private static JSONArray readJSONArrayFromUrl(String url) throws IOException, org.json.JSONException  {
+    private static JSONArray readJSONArrayFromUrl(String url) throws IOException, org.json.JSONException {
         InputStream is = new URL(url).openStream();
         try {
             BufferedReader rd = new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8")));
@@ -51,7 +51,7 @@ public class Backend {
         }
     }
 
-    public Backend(String l, Date d) throws IOException, org.json.JSONException  {
+    public Backend(String l, Date d) throws IOException, org.json.JSONException {
         location = l;
         time = d;
         update();
@@ -62,12 +62,12 @@ public class Backend {
         update();
     }
 
-    public void setTime(Date d) throws org.json.JSONException{
+    public void setTime(Date d) throws org.json.JSONException {
         time = d;
         setCurrentWeather();
     }
 
-    public void toggleUnits() throws IOException, org.json.JSONException{
+    public void toggleUnits() throws IOException, org.json.JSONException {
         if (units.equals("metric")) {
             units = "imperial";
         } else {
@@ -76,7 +76,7 @@ public class Backend {
         update();
     }
 
-    public void update() throws IOException, org.json.JSONException  {
+    public void update() throws IOException, org.json.JSONException {
         hourly = readJsonFromUrl("https://api.openweathermap.org/data/2.5/forecast/hourly?q=" + location + "&units=" + units + "&APPID=" + APPID);
         timeOfUpdate = new Date();
         JSONObject coord = hourly.getJSONObject("city").getJSONObject("coord");
@@ -84,8 +84,8 @@ public class Backend {
         setCurrentWeather();
     }
 
-    private void setCurrentWeather() throws org.json.JSONException  {//UV forecast of only 8 hours from now
-        int hoursFromNow = (int) (time.getTime() - timeOfUpdate.getTime())/ 3600000;
+    private void setCurrentWeather() throws org.json.JSONException {//UV forecast of only 8 hours from now
+        int hoursFromNow = (int) (time.getTime() - timeOfUpdate.getTime()) / 3600000;
         current = hourly.getJSONArray("list").getJSONObject(hoursFromNow);
         if (hoursFromNow < 8) {
             currentuv = uv.getJSONObject(hoursFromNow).getInt("value");
@@ -94,15 +94,15 @@ public class Backend {
         }
     }
 
-    public String getWeather() throws org.json.JSONException  {
+    public String getWeather() throws org.json.JSONException {
         return current.getJSONArray("weather").getJSONObject(0).getString("main");
     }
 
-    public String getDescription() throws org.json.JSONException  {
+    public String getDescription() throws org.json.JSONException {
         return current.getJSONArray("weather").getJSONObject(0).getString("description");
     }
 
-    public double getTemperature()throws org.json.JSONException  {//Celcius of Farenheit
+    public double getTemperature() throws org.json.JSONException {//Celcius of Farenheit
         return current.getJSONObject("main").getDouble("temp");
     }
 
@@ -110,36 +110,40 @@ public class Backend {
         return current.getJSONObject("main").getDouble("pressure");
     }
 
-    public double getHumidity() throws org.json.JSONException  {
+    public double getHumidity() throws org.json.JSONException {
         return current.getJSONObject("main").getDouble("humidity");
     }
 
-    public double getWindSpeed() throws org.json.JSONException  {//meter/sec or miles/hour
+    public double getWindSpeed() throws org.json.JSONException {//meter/sec or miles/hour
         return current.getJSONObject("wind").getDouble("speed");
     }
 
-    public double getWindDirection() throws org.json.JSONException  {//in degrees
+    public double getWindDirection() throws org.json.JSONException {//in degrees
         return current.getJSONObject("wind").getDouble("deg");
     }
 
-    public double getUV(){
+    public double getUV() {
         return currentuv;
     }
 
     public Date getTime() throws org.json.JSONException {
-        return new Date(current.getLong("dt")*1000);
+        return new Date(current.getLong("dt") * 1000);
     }
 
-    public String getLocation(){
+    public String getLocation() {
         return this.location;
     }
 
-    public Date getTimeOfUpdate(){
+    public Date getTimeOfUpdate() {
         return timeOfUpdate;
     }
 
+    public String getUnits() {
+        return units;
+    }
 
-    public static void main(String[] args) throws IOException, org.json.JSONException  {
+
+    public static void main(String[] args) throws IOException, org.json.JSONException {
         Backend b = new Backend("cambridge", new Date());
         System.out.println("Weather " + b.getWeather());
         System.out.println("Description " + b.getDescription());
