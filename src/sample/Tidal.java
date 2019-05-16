@@ -1,4 +1,4 @@
-package weather;
+package sample;
 
 
 import org.json.JSONArray;
